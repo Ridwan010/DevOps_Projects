@@ -3,9 +3,9 @@
 
 - Create an IAM user, name it terraform (ensure that the user has only programatic access to your AWS account) and grant this user AdministratorAccess permissions.
 
-![](./images/create%20IAM%20user.PNG)
+![](./Images/create%20IAM%20user.PNG)
 
-![](./images/admin%20access.PNG)
+![](./Images/admin%20access.PNG)
 
 - Copy the secret access key and access key ID. Save them in a notepad temporarily.
 - Configure programmatic access from your workstation to connect to AWS using the access keys copied above and a Python SDK (boto3). You must have Python 3.6 or higher on your workstation.
@@ -16,9 +16,9 @@ pip install boto3
 pip install boto3[crt]
 ```
 
-![](./images/install%20boto3.PNG)
+![](./Images/install%20boto3.PNG)
 
-![](./images/architecture%20diagram.PNG)
+![](./Images/architecture%20diagram.PNG)
 
 
 If you have the AWS CLI installed, then you can use the aws configure command to configure your credentials file:
@@ -33,7 +33,7 @@ aws_access_key_id = YOUR_ACCESS_KEY
 aws_secret_access_key = YOUR_SECRET_KEY
 ```
 
-![](./images/terraform%20bucket.PNG)
+![](./Images/terraform%20bucket.PNG)
 You may also want to add a default region to the AWS configuration file, which is located by default at ~/.aws/config:
 
 ```
@@ -53,7 +53,7 @@ Open your Visual Studio Code and:
 - 
 Your setup should look like this.
 
-![](./images/PBL%20folder.PNG)
+![](./Images/PBL%20folder.PNG)
 
 
 # Provider and VPC resource section
@@ -70,7 +70,7 @@ Note: You can change the configuration above to create your VPC in other region 
 
 - The next thing we need to do, is to download necessary plugins for Terraform to work. These plugins are used by providers and provisioners. At this stage, we only have provider in our main.tf file. So, Terraform will just download plugin for AWS provider.
 
-![](./images/terraform%20init.PNG)
+![](./Images/terraform%20init.PNG)
 
 - Notice that a new directory has been created: .terraform.... This is where Terraform keeps plugins. Generally, it is safe to delete this folder. It just means that you must execute terraform init again, to download them.
 
@@ -80,7 +80,7 @@ Note: You can change the configuration above to create your VPC in other region 
 
 - Then, if you are happy with changes planned, execute terraform apply
 
-![](./images/terraform%20apply%20for%20VPC.PNG)
+![](./Images/terraform%20apply%20for%20VPC.PNG)
 
 
 
@@ -124,7 +124,7 @@ First, destroy the current infrastructure. Since we are still in development, th
 To destroy whatever has been created run terraform destroy command, and type yes after evaluating the plan.
 
 
-![](./images/creation%20of%20subnets%20terraform%20plan.PNG)
+![](./Images/creation%20of%20subnets%20terraform%20plan.PNG)
 
 
 # FIXING THE PROBLEMS BY CODE REFACTORING
@@ -432,5 +432,5 @@ preferred_number_of_public_subnets = 2
 ```
 
 
-![](./images/final%20creation.PNG)
+![](./Images/final%20creation.PNG)
 
